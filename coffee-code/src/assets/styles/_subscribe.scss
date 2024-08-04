@@ -1,0 +1,80 @@
+@use "reset";
+@use "fonts";
+.section-subscribe {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+
+  %box-shadow-style {
+    box-shadow: -3px 3px 0px 0px #000;
+  }
+
+  .section-subscribe-container {
+    margin-top: 40px;
+    padding: 2%;
+    border: 1px solid #000;
+    box-shadow: -3px 3px 0px 0px #000;
+    max-width: 90%;
+    width: 750px;
+    height: 400px;
+
+    #title-page {
+      font-weight: normal;
+      font-size: 50px;
+    }
+    #sub-title-page {
+      max-width: 90%;
+      font-weight: normal;
+      font-size: 20px;
+    }
+    #description-page {
+      text-align: justify;
+      margin-top: 20px;
+      font-size: 17px;
+    }
+    .form-subscribe {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      margin-top: 20px;
+      gap: 20px;
+
+      #input-email {
+        width: 260px;
+        padding: 2%;
+        border-radius: 5px;
+        border: 1px solid gray;
+        outline: none;
+
+        &:focus {
+          @extend %box-shadow-style;
+          border: 1px solid rgb(2, 2, 2);
+        }
+      }
+
+      #button-submit {
+        box-sizing: content-box;
+        width: 200px;
+        transition: background 150ms;
+        cursor: pointer;
+        transition: box-shadow 150ms;
+        border: 1px solid #000;
+        &:hover {
+          @extend %box-shadow-style;
+          transition: box-shadow 150ms;
+          border: 1px solid #000;
+        }
+      }
+    }
+
+    #lengthEmails {
+      margin-top: 20px;
+      text-align: center;
+
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
+}
