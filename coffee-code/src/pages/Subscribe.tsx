@@ -27,7 +27,7 @@ function Subscribe() {
               type="text"
               placeholder="Digite seu email"
             />
-            <Button id="button-submit" textButton="Inscreve-se" />
+            <Button id="button-submit" textButton="Inscreva-se" />
           </form>
           <LengthEmailsSubscribe id="lengthEmails" />
         </div>
