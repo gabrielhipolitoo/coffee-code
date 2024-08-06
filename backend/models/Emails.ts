@@ -1,7 +1,7 @@
 import { Schema, model, createConnection } from "mongoose";
 
 interface Email {
-  email: string;
+  email: Object;
 }
 
 const EmailSchema = new Schema<Email>({
