@@ -3,10 +3,22 @@ import { CoffeeCode } from "../assets/svgs/coffee-code-icon";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import LengthEmailsSubscribe from "../components/LengthEmailsSubscribe";
+import { UseAxios } from "../hooks/UseAxios";
 
 function Subscribe() {
-  const handleForm = (e: React.FormEvent<HTMLFormElement>) => {
+  const { sendEmail } = UseAxios();
+
+  interface FormElements extends HTMLFormControlsCollection {
+    inputemail: HTMLInputElement;
+  }
+
+  interface InputEmail extends HTMLFormElement {
+    readonly elements: FormElements;
+  }
+  const handleForm = (e: React.FormEvent<InputEmail>) => {
     e.preventDefault();
+    const emailValue = {email:e.currentTarget.elements.inputemail.value}
+    sendEmail(emailValue);
   };
 
   console.log(HTMLInputElement instanceof HTMLFormControlsCollection);
@@ -28,10 +40,12 @@ function Subscribe() {
           </p>
           <form onSubmit={handleForm} className="form-subscribe">
             <Input
+              name="inputemail"
               id="input-email"
               type="text"
               placeholder="Digite seu email"
             />
+
             <Button id="button-submit" textButton="Inscreva-se" />
           </form>
           <LengthEmailsSubscribe id="lengthEmails" />

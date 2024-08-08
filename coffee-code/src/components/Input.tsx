@@ -1,13 +1,12 @@
-interface Props {
+interface ComponetProps {
   id: string;
+  name: string;
   type: "text" | undefined;
   placeholder: string;
 }
 
-function Input(props: Props) {
-  const { id, placeholder, type } = props;
-
-  return <input type={type} id={id} placeholder={placeholder} />;
+function Input({ id, name, type, placeholder }: ComponetProps) {
+  return <input type={type} name={name} id={id} placeholder={placeholder} />;
 }
 
 export default Input;

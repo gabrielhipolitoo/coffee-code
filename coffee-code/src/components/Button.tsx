@@ -1,11 +1,9 @@
-
-interface Props {
+type ComponetProps = {
   id: string;
   textButton: string;
-}
+};
 
-function Button(props: Props) {
-  const { id, textButton } = props;
+function Button({ id, textButton }: ComponetProps) {
   return (
     <button type="submit" id={id}>
       {textButton}
