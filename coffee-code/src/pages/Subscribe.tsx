@@ -1,18 +1,12 @@
-import { FormEvent, FormEventHandler } from "react";
 import "../assets/styles/_subscribe.scss";
 import { CoffeeCode } from "../assets/svgs/coffee-code-icon";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import LengthEmailsSubscribe from "../components/LengthEmailsSubscribe";
 
-interface FormControll extends HTMLFormControlsCollection {
-
-}
-
 function Subscribe() {
   const handleForm = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    
+    e.preventDefault();
   };
 
   console.log(HTMLInputElement instanceof HTMLFormControlsCollection);
