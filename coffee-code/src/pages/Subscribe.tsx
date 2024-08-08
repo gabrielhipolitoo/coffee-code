@@ -1,10 +1,21 @@
+import { FormEvent, FormEventHandler } from "react";
 import "../assets/styles/_subscribe.scss";
 import { CoffeeCode } from "../assets/svgs/coffee-code-icon";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import LengthEmailsSubscribe from "../components/LengthEmailsSubscribe";
 
+interface FormControll extends HTMLFormControlsCollection {
+
+}
+
 function Subscribe() {
+  const handleForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    
+  };
+
+  console.log(HTMLInputElement instanceof HTMLFormControlsCollection);
   return (
     <>
       <section className="section-subscribe">
@@ -21,7 +32,7 @@ function Subscribe() {
             mais. Não perca nenhuma atualização importante — é rápido, fácil e
             gratuito.
           </p>
-          <form className="form-subscribe">
+          <form onSubmit={handleForm} className="form-subscribe">
             <Input
               id="input-email"
               type="text"
