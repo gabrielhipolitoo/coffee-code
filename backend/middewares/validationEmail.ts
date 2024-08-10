@@ -11,10 +11,11 @@ const validationEmail = (
   if (regexEmail.test(req.body.email)) {
     next();
   } else {
-    res.status(400).json({
+    console.log(req.body);
+    res.status(202).json({
       status: "E-mail invalido",
     });
   }
 };
-
+ 
 export default validationEmail;

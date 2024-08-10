@@ -11,11 +11,10 @@ const verifyEmail = async (
   const verifyEmail = await EmailModel.findOne({ email: email });
 
   if (verifyEmail) {
-    res.status(500).json({
+    res.status(202).json({
       status: "Este email ja esta inscrito",
     });
   } else {
-    // console.log("Passei por aqui");
     next();
   }
 };
